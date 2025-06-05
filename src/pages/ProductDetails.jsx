@@ -48,27 +48,34 @@ export default function ProductDetails() {
           <div className="md:w-1/2 p-8 flex items-center justify-center ">
             <img className=" h-96 object-contain bg-shadow-md rounded-4xl"
               src={product.image}
-              alt={product.title}
+              alt={product.name}
             />
           </div>
           {/* Personal Info */}
           <div className="md:w-1/2 p-8">
-            <h1 className="text-3xl font-bold t mt-2">
-              {product.title}
-            </h1>
+            <div className="mb-2">
+              {/* <span className="text-sm font-semibold text-gray-500">Product Name: </span> */}
+              <span className="text-2xl font-bold align-middle">{product.name}</span>
+            </div>
+            <div className="mb-4">
+              <span className="text-sm font-semibold">Description:</span>
+              <p className="text-lg mt-1">
+                {product.description}
+              </p>
+            </div>
             <span className="text-3xl font-bold ">
               ${product.price.toFixed(2)}
             </span>
             {/* Add your addToCart logic here if needed */}
             <div className="mt-2 space-x-3">
-              <button className="cursor-pointer flex-1 bg-indigo-600 hover:bg-indigo-700  py-3 px-8 rounded-md font-medium transition-colors">
+              <button className="cursor-pointer flex-1 bg-amber-400 hover:bg-amber-500 text-gray-700 py-3 px-8 rounded-md font-medium transition-colors">
                 Add to Cart
               </button>
-              <button className="cursor-pointer flex-1 bg-gray-200 hover:bg-gray-300  py-3 px-8 rounded-md font-medium transition-colors">
+              <button className="cursor-pointer flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 px-8 rounded-md font-medium transition-colors">
                 Buy Now
               </button>
             </div>
-            <p className="text-gray-600">
+            <p>
               <span className="font-medium mt-2">Product ID:</span> {product.id}
             </p>
           </div>
