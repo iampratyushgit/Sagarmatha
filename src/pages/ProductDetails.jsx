@@ -11,28 +11,34 @@ export default function ProductDetails() {
     setLoading(true);
     setError(null);
     setProduct(null);
-    fetch("/data/parts.json")
-      .then((res) => {
+
+    // Fetch and delay for at least 2 seconds
+    const fetchData = async () => {
+      try {
+        const res = await fetch("/data/parts.json");
         if (!res.ok) throw new Error("Network response was not ok");
-        return res.json();
-      })
-      .then((data) => {
-        // Find the product by id (id from params is string, so convert to number)
+        const data = await res.json();
         const found = data.find((item) => String(item.id) === String(id));
         if (!found) throw new Error("Product not found");
         setProduct(found);
-      })
-      .catch((err) => {
+      } catch (err) {
         setError(err);
-      }).finally(() => {
-        setLoading(false);
-      });
+      }
+    };
+
+    const timer = setTimeout(() => {
+      fetchData().finally(() => setLoading(false));
+    }, 2000);
+
+    return () => clearTimeout(timer);
   }, [id]);
 
   if (loading) {
-    return <div className="flex justify-center items-center h-64">
-      <div className="w-12 h-12 border-4 border-indigo-600  rounded-full animate-spin"></div>
-    </div>
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="w-12 h-12 border-4 border-indigo-600 rounded-full animate-spin"></div>
+      </div>
+    );
   }
   if (error) {
     return <div className="text-center mt-10">Error: {error.message}</div>;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const AllParts = () => {
   const [parts, setParts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Simulated fetch (replace with API if needed)
@@ -10,9 +11,17 @@ const AllParts = () => {
       const response = await fetch("/data/parts.json"); // Load from public/data
       const data = await response.json();
       setParts(data);
+      setLoading(false);
     };
     fetchParts();
   }, []);
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-black rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="pl-20 pt-6 pb-6  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
