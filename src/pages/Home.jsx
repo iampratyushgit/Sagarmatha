@@ -5,7 +5,7 @@ const Home = () => {
       <div className="flex flex-col items-center mt-36 h-screen bg-yellow-300 w-screen">
         <h1 className="text-5xl font-bold mb-4">Welcome to Sagarmatha</h1>
         <p className="text-lg mb-8">Your one-stop shop for all your needs!</p>
-        <a href="#products" className="bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 hover:underline transition duration-300">Shop Now</a>
+        <a href="/products" className="bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 hover:underline transition duration-300">Shop Now</a>
       </div>
         <h3 className="text-3xl font-bold mt-48">Our Products are from the companies like</h3>
       <div className="flex space-x-2 mt-4 border-t-2 border-black bg-yellow-300 w-screen text-left">
