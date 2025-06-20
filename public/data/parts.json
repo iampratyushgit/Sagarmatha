@@ -192,7 +192,7 @@
     "id": 22,
     "name": "Track Shoe",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6o0SuAKWnKivHhTvtp8tCxoeh49ZnqUl73w&s",
-    "price": 280,
+    "price": 2800,
     "ratings": 4.3,
     "review": "Excellent grip and durability.",
     "description": "Bolt-on track shoe for crawlers."
@@ -201,7 +201,7 @@
     "id": 23,
     "name": "Battery",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7j6NKIdKU8jKTZTgZb2zwgwg8-Dn3Iptj-g&s",
-    "price": 160,
+    "price": 16000,
     "ratings": 4.7,
     "review": "Starts reliably every time.",
     "description": "Heavy-duty 12V battery for construction vehicles."
