@@ -1,11 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     setLoading(true);
@@ -74,9 +78,15 @@ export default function ProductDetails() {
             </span>
             {/* Add your addToCart logic here if needed */}
             <div className="mt-2 space-x-3">
-              <button className="cursor-pointer flex-1 bg-amber-400 hover:bg-amber-500 text-gray-700 py-3 px-8 rounded-md font-medium transition-colors">
-                Add to Cart
-              </button>
+      <button
+        className="cursor-pointer flex-1 bg-amber-400 hover:bg-amber-500 text-gray-700 py-3 px-8 rounded-md font-medium transition-colors"
+        onClick={() => {
+          addToCart(product);
+          navigate("/cart");
+        }}
+      >
+        Add to Cart
+      </button>
               <button className="cursor-pointer flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 px-8 rounded-md font-medium transition-colors">
                 Buy Now
               </button>
