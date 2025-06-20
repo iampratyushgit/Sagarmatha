@@ -55,7 +55,7 @@ export default function Cart() {
           </ul>
           <div className="flex justify-between items-center mt-6">
             <span className="text-xl font-bold">Total:</span>
-            <span className="text-2xl font-bold">${total.toFixed(2)}</span>
+            <span className="text-2xl font-bold">Rs.{total.toFixed(2)}</span>
           </div>
           <div className="mt-8">
             <h3 className="text-lg font-semibold mb-3">Choose Payment Option</h3>
