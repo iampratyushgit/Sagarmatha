@@ -74,7 +74,7 @@ export default function ProductDetails() {
               </p>
             </div>
             <span className="text-3xl font-bold ">
-              ${product.price.toFixed(2)}
+              Rs.{product.price.toFixed(2)}
             </span>
             {/* Add your addToCart logic here if needed */}
             <div className="mt-2 space-x-3">

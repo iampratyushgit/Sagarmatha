@@ -1,12 +1,11 @@
-import {Routes, Route, Outlet} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
-import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
 
-export default function AppRoutes() {
+export function AppRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
