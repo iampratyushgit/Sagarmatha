@@ -81,13 +81,13 @@ export default function ProductDetails() {
             <div className="flex items-center mt-4 mb-2 space-x-3">
               <span className="text-lg font-semibold">Quantity:</span>
               <button
-                className="bg-gray-200 px-3 py-1 rounded text-xl font-bold"
+                className="px-3 py-1 rounded text-xl font-bold"
                 onClick={() => setQuantity(q => Math.max(1, q - 1))}
                 aria-label="Decrease quantity"
               >-</button>
               <span className="text-xl font-semibold">{quantity}</span>
               <button
-                className="bg-gray-200 px-3 py-1 rounded text-xl font-bold"
+                className="px-3 py-1 rounded text-xl font-bold"
                 onClick={() => setQuantity(q => q + 1)}
                 aria-label="Increase quantity"
               >+</button>
